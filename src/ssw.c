@@ -35,7 +35,7 @@
  *
  */
 
-#include <emmintrin.h>
+#include "sse2neon_compat.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -812,8 +812,8 @@ s_profile* ssw_init (const int8_t* read, const int32_t readLen, const int8_t* ma
 		p->profile_byte = qP_byte (read, mat, readLen, n, bias);
 	}
 	if (score_size == 1 || score_size == 2) p->profile_word = qP_word (read, mat, readLen, n);
-	p->read = read;
-	p->mat = mat;
+	p->read = (int8_t*)(uintptr_t)read;
+        p->mat = mat;
 	p->readLen = readLen;
 	p->n = n;
 	return p;
@@ -828,7 +828,7 @@ void init_destroy (s_profile* p) {
 void init_destroy2(s_profile* p) {
     free(p->profile_byte);
     free(p->profile_word);
-    free(p->read);
+    free((void*)p->read);
     free(p);
 }
 

@@ -1,7 +1,11 @@
 CC=gcc
 CFLAGS=-Wall -Wno-unused-variable -O3 -c -g #-DUSELEXICOGRAPHICAL
+CFLAGS += -Xpreprocessor -fopenmp
+CFLAGS += -I/opt/homebrew/opt/libomp/include
 INCLUDES=-I. -I./seg
 LDFLAGS=-lm -lpthread
+LDFLAGS += -lomp
+LDFLAGS += -L/opt/homebrew/opt/libomp/lib
 SOURCES=main.c \
         index.c \
         demux.c \

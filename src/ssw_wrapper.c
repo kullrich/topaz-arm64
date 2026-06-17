@@ -13,7 +13,7 @@
 
 
 //	Print the BLAST like output.
-static void ssw_write (const s_align* a,
+static void __attribute__((unused)) ssw_write (const s_align* a,
 			const char* ref_seq,
 			const char* read_seq,
 			const int8_t* table) {
@@ -122,7 +122,7 @@ s_profile* get_ssw_profile(seq_t* s1, options_t* opt) {
 
     profile = ssw_init(num, 
                        seq_len(s1), 
-                       opt->substitution, 
+                       (const int8_t*)opt->substitution, 
                        25, 
                        2);
 
@@ -353,7 +353,7 @@ void align_using_ssw(seq_t* s1, seq_t* s2, hit_t* hit, options_t* opt) {
 
     profile = ssw_init(num, 
                        seq_len(s1), 
-                       opt->substitution, 
+                       (const int8_t*)opt->substitution, 
                        25, 
                        2);
 

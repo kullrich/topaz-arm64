@@ -551,7 +551,7 @@ int search_pthread(search_t *s) {
             s->total_alignment_time, 
             elapsed_time(&s->start_time, &end_time));
 */
-    fprintf(stderr, "output %"PRIu64" hits for %"PRIu32" queries\n", s->number_of_hits_total, s->number_of_nonzero_hit_queries);
+    fprintf(stderr, "output %"PRIu32" hits for %"PRIu64" queries\n", s->number_of_hits_total, s->number_of_nonzero_hit_queries);
     fprintf(stderr, "elapsed time: %.1f seconds\n", elapsed_time(&s->start_time, &end_time) / 1000);
     fprintf(stderr, "done!\n");
 

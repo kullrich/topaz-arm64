@@ -41,7 +41,7 @@ struct strlist
 #include <stdint.h>
 
 #define TESTMAX 1000
-void *tmalloc();
+void *tmalloc(size_t size);
 //int record_ptrs[TESTMAX] = {0,0,0,0};
 int64_t record_ptrs[TESTMAX] = {0,0,0,0};
 int rptr = 0;
@@ -165,7 +165,8 @@ extern struct Sequence *nextwin(struct Sequence *win, int shift)
   }
 
 /*--------------------------------------------------------------(shiftwin1)---*/
-static void	decrementsv(), incrementsv();
+static void decrementsv(int *sv, int class);
+static void incrementsv(int *sv, int class);
 
 extern int shiftwin1(struct Sequence *win)
 {

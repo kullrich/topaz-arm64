@@ -146,17 +146,19 @@ struct PerScoreVec
 
 int min(int a, int b);
 
-extern void closeseq();
+extern void closeseq(struct Sequence *seq);
 
-extern struct Sequence *openwin(), *nextwin();
+extern struct Sequence *openwin(struct Sequence *parent, int start, int length);
+extern struct Sequence *nextwin(struct Sequence *win, int shift);
 extern int shiftwin1(struct Sequence *win);
 extern void closewin(struct Sequence *win);
 extern void genwininit();
 
 extern void entropy_init(int window);
-extern double entropy();
+extern double entropy(int *sv);
 
-extern void upper(), lower();
+extern void upper(char *string, size_t len);
+extern void lower(char *string, size_t len);
 extern int findchar(char *str, char chr);
 void readseq(struct Sequence *seq);
 void skipline(FILE* fp);

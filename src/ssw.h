@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
-#include <emmintrin.h>
+#include "sse2neon_compat.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,8 +31,8 @@ extern "C" {
 struct _profile{
     __m128i* profile_byte;  // 0: none
     __m128i* profile_word;  // 0: none
-    //const int8_t* read;
-    int8_t* read;
+    const int8_t* read;
+    //int8_t* read;
     const int8_t* mat;
     int32_t readLen;
     int32_t n;

@@ -31,7 +31,7 @@ typedef struct {
 } wqueue2_t;
 
 
-wqueue_t* wqueue_alloc();
+wqueue_t* wqueue_alloc(int max_length);
 void wqueue_free(wqueue_t* wq, void (*payload_free)(void*));
 int wqueue_full(wqueue_t* wq);
 int wqueue_empty(wqueue_t* wq);

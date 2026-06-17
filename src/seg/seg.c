@@ -44,7 +44,10 @@ int prettytree = FALSE; //TRUE;
 int charline = 60;
 int maxtrim = 100;
 
-double getprob(), lnperm(), lnass();
+double  getprob(int *sv, int total);
+double  lnperm(int *sv, int tot);
+double  lnass(int *sv);
+double *seqent(struct Sequence *seq);
 void segseq(struct Sequence *seq, struct Segment **segs, int offset);
 void usage();
 void appendseg(struct Segment *segs, struct Segment *seg);
@@ -150,7 +153,7 @@ void segseq(struct Sequence *seq, struct Segment **segs, int offset)
    int first, last, lowlim;
    int loi, hii, i;
    int leftend, rightend, lend, rend;
-   double *H, *seqent();
+   double *H;
 
    H = seqent(seq);
    if (H==NULL) return;
@@ -457,6 +460,7 @@ void singreport(struct Sequence *seq, struct Segment *segs)
 	char	*proseq, *proseqmax;
 	struct Segment	*seg;
 	int	begin, end, i, ctr;
+        (void)i;
 
 	proseq = seq->seq;
 	proseqmax = proseq + seq->length;
