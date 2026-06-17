@@ -1,8 +1,18 @@
 # TOPAZ: asymmetric suffix array neighbourhood search for massive protein databases
 
-TOPAZ is a high-performance homology search method based on asymmetric suffix array neighbourhood search (SANS), scored seeds and optimal substitution ordering. A manuscript describing its operation is currently under review.
+This is a fork from the original repo [https://github.com/ajm/topaz.git](https://github.com/ajm/topaz.git).
+I have changed some lines and included [https://github.com/DLTcollab/sse2neon](https://github.com/DLTcollab/sse2neon) so that TOPAZ can be compiled on arm64.
+
+TOPAZ is a high-performance homology search method based on asymmetric suffix array neighbourhood search (SANS), scored seeds and optimal substitution ordering. A manuscript describing its operation is available [here](https://doi.org/10.1186/s12859-018-2290-3).
 
 The TOPAZ source code is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+If you use TOPAZ please cite:
+
+Medlar, Alan, and Liisa Holm.
+"TOPAZ: asymmetric suffix array neighbourhood search for massive protein databases."
+BMC bioinformatics 19.1 (2018): 278.
+[https://doi.org/10.1186/s12859-018-2290-3](https://doi.org/10.1186/s12859-018-2290-3)
 
 ## Contact
 
@@ -10,10 +20,10 @@ If you have an questions about installing or running TOPAZ, please contact <a hr
 
 ## Installation
 
-Download TOPAZ source code and compile:
+Download TOPAZ-arm64 source code and compile:
 
-    git clone https://github.com/ajm/topaz.git
-    cd topaz/src
+    git clone https://github.com/kullrich/topaz-arm64
+    cd topaz-arm64/src
     make
 
 ## Indexing
