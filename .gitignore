@@ -6,3 +6,5 @@ build/
 work/
 recipe_output/
 *.conda
+recipe.yaml
+build.sh
