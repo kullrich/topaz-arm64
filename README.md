@@ -16,7 +16,7 @@ BMC bioinformatics 19.1 (2018): 278.
 
 ## Contact
 
-If you have an questions about installing or running TOPAZ, please contact <a href="mailto:amedlar AT gmail DOT com">Alan Medlar</a>
+If you have any questions about installing or running TOPAZ, please contact <a href="mailto:amedlar AT gmail DOT com">Alan Medlar</a>.
 
 ## Installation
 
