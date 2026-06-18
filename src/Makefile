@@ -12,6 +12,11 @@ EXECUTABLE = topaz
 
 INCLUDES += -I. -I./seg
 
+# =========================================================
+# Base system libraries (IMPORTANT for Linux)
+# =========================================================
+LDFLAGS += -lm -lpthread
+
 # ----------------------------
 # OpenMP configuration
 # ----------------------------
