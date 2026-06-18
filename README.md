@@ -7,6 +7,14 @@ TOPAZ is a high-performance homology search method based on asymmetric suffix ar
 
 The TOPAZ source code is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
+TOPAZ uses third-party components:
+
+- sse2neon (MIT License)
+  https://github.com/DLTcollab/sse2neon
+
+- libdivsufsort (MIT License)
+  https://github.com/y-256/libdivsufsort
+
 If you use TOPAZ please cite:
 
 Medlar, Alan, and Liisa Holm.
