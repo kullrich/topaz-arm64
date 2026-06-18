@@ -1,0 +1,44 @@
+package:
+  name: topaz
+  version: 0.1.0
+
+source:
+  url: https://github.com/kullrich/topaz-arm64/archive/v${{ version }}.tar.gz
+  sha: 
+
+build:
+  number: 0
+  script:
+    - bash ${RECIPE_DIR}/build.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - make
+
+  host:
+    - if: osx
+      then:
+        - llvm-openmp  # [osx]
+    - if: linux
+      then:
+        - libgomp  # [linux]
+
+  run:
+    - if: osx
+      then:
+        - llvm-openmp  # [osx]
+    - if: linux
+      then:
+        - libgomp  # [linux]
+
+about:
+  summary: "TOPAZ: asymmetric suffix array neighbourhood search for massive protein databases"
+  license: GPL-3.0-only
+  license_file: LICENSE
+  repository: https://github.com/kullrich/topaz-arm64
+
+extra:
+  recipe-maintainers:
+    - kullrich

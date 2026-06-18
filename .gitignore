@@ -1,2 +1,8 @@
 *~
 *o
+src/topaz
+output/
+build/
+work/
+recipe_output/
+*.conda
