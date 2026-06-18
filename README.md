@@ -26,6 +26,15 @@ Download TOPAZ-arm64 source code and compile:
     cd topaz-arm64/src
     make
 
+On macOS (Apple Silicon / arm64), OpenMP support requires Homebrew’s libomp.
+
+To compile the project, run:
+
+    brew install libomp
+    git clone https://github.com/kullrich/topaz-arm64
+    cd topaz-arm64/src
+    make USE_OPENMP=1 OMP_PREFIX=/opt/homebrew/opt/libomp
+
 ## Indexing
 
 TOPAZ has an index command to generate databases. Here we create a database containing all the sequences in database.fasta starting with the prefix "DB":
